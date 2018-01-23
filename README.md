@@ -40,21 +40,21 @@ $ npm install -g bower
 ```
 
 ``` bash
-npm install -g @angular/cli
-ng new hello-angular
-cd hello-angular
+$ npm install -g @angular/cli
+$ ng new hello-angular
+$ cd hello-angular
 
 # We will use a third-party helper library https://github.com/hotforfeature/origami
-npm install --save @codebakery/origami
-bower init
+$ npm install --save @codebakery/origami
+$ bower init
 # Keep everything default
 
-cat > .bowerrc
+$ cat > .bowerrc
 {"directory": "src/assets/bower_components"}
 ctrl+D
 
-bower install --save Polymer/polymer
-bower install --save vaadin
+$ bower install --save Polymer/polymer
+$ bower install --save vaadin
 ```
 
 If you'd like to not commit bower dependencies to your version control, add `src/assets/bower_components` to `.gitignore`.
