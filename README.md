@@ -1,4 +1,4 @@
-# Skeleton Starter for Vaadin Elements and Angular
+# Base Starter for Vaadin Elements and Angular
 
 ## Install all dependencies
 
@@ -39,42 +39,42 @@ Then install Bower:
 $ npm install -g bower
 ```
 
-```
-$ npm install -g @angular/cli
-$ ng new hello-angular
-$ cd hello-angular
+``` bash
+npm install -g @angular/cli
+ng new hello-angular
+cd hello-angular
 
 # We will use a third-party helper library https://github.com/hotforfeature/origami
-$ npm install --save @codebakery/origami
-$ bower init
-
+npm install --save @codebakery/origami
+bower init
 # Keep everything default
-$ cat > .bowerrc
+
+cat > .bowerrc
 {"directory": "src/assets/bower_components"}
 ctrl+D
 
-$ bower install --save Polymer/polymer
-$ bower install --save vaadin
+bower install --save Polymer/polymer
+bower install --save vaadin
 ```
 
 If you'd like to not commit bower dependencies to your version control, add `src/assets/bower_components` to `.gitignore`.
 
 Open `src/index.html` and add the following in the `<head>` section:
-```html
-<script src="assets/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-<link rel="import" href="assets/bower_components/vaadin-valo-theme/vaadin-button.html">
-<link rel="import" href="assets/bower_components/vaadin-button/vaadin-button.html">
-<link rel="import" href="assets/bower_components/vaadin-valo-theme/vaadin-text-field.html">
-<link rel="import" href="assets/bower_components/vaadin-text-field/vaadin-text-field.html">
-```
+  ``` html
+  <script src="assets/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+  <link rel="import" href="assets/bower_components/vaadin-valo-theme/vaadin-button.html">
+  <link rel="import" href="assets/bower_components/vaadin-button/vaadin-button.html">
+  <link rel="import" href="assets/bower_components/vaadin-valo-theme/vaadin-text-field.html">
+  <link rel="import" href="assets/bower_components/vaadin-text-field/vaadin-text-field.html">
+  ```
 
 Open `src/main.ts`
   In the `import` section, add:
-  ```typescript
+  ``` typescript
   	import { webcomponentsReady } from '@codebakery/origami';
   ```
 	Wrap `platformBrowserDynamic` code with:
-  ```typescript
+  ``` typescript
 	webcomponentsReady().then(() => {
     platformBrowserDynamic().bootstrapModule(AppModule)
       .catch(err => console.log(err));
@@ -86,28 +86,28 @@ Open `src/main.ts`
   
 Open `src/app/app.module.ts`
 	Update the `import` section:
-  ```typescript
+  ``` typescript
   import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   import { PolymerModule } from '@codebakery/origami';
   ```
   Inside the `@NgModule` definition, add:
-  ```typescript
+  ``` typescript
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   ```
   Inside the `@NgModule` definition, add this to the `imports` array:
-  ```typescript
+  ``` typescript
   PolymerModule.forRoot(),
   ```
 
 Open `src/app/app.component.html` and replace all the HTML code with:
-  ```html
+  ``` html
   <vaadin-text-field id="text" placeholder="Type Something"></vaadin-text-field>
   <vaadin-button (click)='clicked()'>Click Me!</vaadin-button>
   <h2>Hello {{title}}!</h2>
   ```
 
 Open `src/app/app.component.ts` and define the click event inside the `class`:
-```typescript
+``` typescript
  clicked() {
    this.title = document.getElementById('text')['value'];
  }
