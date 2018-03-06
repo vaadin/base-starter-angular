@@ -1,4 +1,4 @@
-# Base Starter for Vaadin Elements and Angular
+# Base Starter for Vaadin components with Angular
 
 ## Instructions
 
