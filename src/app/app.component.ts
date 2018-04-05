@@ -10,8 +10,4 @@ import '@vaadin/vaadin-text-field/vaadin-text-field.js';
 })
 export class AppComponent {
   title = 'app';
-
-  clicked() {
-    this.title = document.getElementById('text')['value'];
-  }
 }

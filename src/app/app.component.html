@@ -1,3 +1,3 @@
-<vaadin-text-field id="text" placeholder="Type Something"></vaadin-text-field>
-<vaadin-button (click)='clicked()'>Click Me!</vaadin-button>
+<vaadin-text-field #textField placeholder="Type Something"></vaadin-text-field>
+<vaadin-button (click)='title=textField.value'>Click Me!</vaadin-button>
 <h2>Hello {{title}}!</h2>

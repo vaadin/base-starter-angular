@@ -69,7 +69,7 @@ webcomponentsReady().then(() => {
 
 Open `src/polyfills.ts` and add webcomponents import in the end of the file:
 ``` typescript
-import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
+import '@webcomponents/webcomponentsjs/webcomponents-sd-ce.js';
 ```
 
 Open `src/app/app.module.ts`
@@ -89,18 +89,12 @@ PolymerModule.forRoot(),
 
 Open `src/app/app.component.html` and replace all the HTML code with:
 ``` html
-<vaadin-text-field id="text" placeholder="Type Something"></vaadin-text-field>
-<vaadin-button (click)='clicked()'>Click Me!</vaadin-button>
+<vaadin-text-field #textField placeholder="Type Something"></vaadin-text-field>
+<vaadin-button (click)='title=textField.value'>Click Me!</vaadin-button>
 <h2>Hello {{title}}!</h2>
 ```
 
-Open `src/app/app.component.ts` and define the click event inside the `class`:
-``` typescript
-clicked() {
-  this.title = document.getElementById('text')['value'];
-}
-```
-  In the `import` section, add:
+Open `src/app/app.component.ts` and in the `import` section, add:
 ``` typescript
 import '@vaadin/vaadin-button/vaadin-button.js';
 import '@vaadin/vaadin-text-field/vaadin-text-field.js';
