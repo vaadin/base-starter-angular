@@ -4,7 +4,7 @@
 
 ### Install all dependencies
 
-Run `bower install` to install all the necessary dependencies. After this you can run the development server.
+Run `npm install` to install all the necessary dependencies. After this you can run the development server.
 
 ### Development server
 
@@ -33,13 +33,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Recreating this project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5 with additional steps to include bower dependencies. You can recreate the project by following along these steps:
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5 with additional steps to include Vaadin components. You can recreate the project by following along these steps:
 
 First [install npm](https://docs.npmjs.com/getting-started/installing-node)
-Then install Bower: 
-```
-$ npm install -g bower
-```
 
 ``` bash
 $ npm install -g @angular/cli
@@ -48,26 +44,11 @@ $ cd hello-angular
 
 # We will use a third-party helper library https://github.com/hotforfeature/origami
 $ npm install --save @codebakery/origami
-$ bower init
-# Keep everything default
 
-$ cat > .bowerrc
-{"directory": "src/assets/bower_components"}
-ctrl+D
-
-$ bower install --save Polymer/polymer
-$ bower install --save vaadin
-```
-
-If you'd like to not commit bower dependencies to your version control, add `src/assets/bower_components` to `.gitignore`.
-
-Open `src/index.html` and add the following in the `<head>` section:
-``` html
-<script src="assets/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-<link rel="import" href="assets/bower_components/vaadin-valo-theme/vaadin-button.html">
-<link rel="import" href="assets/bower_components/vaadin-button/vaadin-button.html">
-<link rel="import" href="assets/bower_components/vaadin-valo-theme/vaadin-text-field.html">
-<link rel="import" href="assets/bower_components/vaadin-text-field/vaadin-text-field.html">
+$ npm install --save @polymer/polymer@next
+$ npm install --save @vaadin/vaadin-button
+$ npm install --save @vaadin/vaadin-text-field
+$ npm i --save @webcomponents/webcomponentsjs@latest
 ```
 
 Open `src/main.ts`
@@ -85,7 +66,12 @@ webcomponentsReady().then(() => {
   console.error(error);
 });
 ```
-  
+
+Open `src/polyfills.ts` and add webcomponents import in the end of the file:
+``` typescript
+import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
+```
+
 Open `src/app/app.module.ts`
 	Update the `import` section:
 ``` typescript
@@ -114,3 +100,9 @@ clicked() {
   this.title = document.getElementById('text')['value'];
 }
 ```
+  In the `import` section, add:
+``` typescript
+import '@vaadin/vaadin-button/vaadin-button.js';
+import '@vaadin/vaadin-text-field/vaadin-text-field.js';
+```
+
