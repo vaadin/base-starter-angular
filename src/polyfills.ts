@@ -64,3 +64,6 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+/** Polyfill required for web components **/
+import '@webcomponents/webcomponentsjs/webcomponents-sd-ce.js';
