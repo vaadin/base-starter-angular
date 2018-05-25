@@ -35,20 +35,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5 with additional steps to include Vaadin components. You can recreate the project by following along these steps:
 
-First [install yarn](https://yarnpkg.com/lang/en/docs/install)
+First [install yarn](https://yarnpkg.com/docs/install)
 
 ``` bash
-$ yarn install -g @angular/cli
+$ yarn global add @angular/cli
 $ ng new hello-angular
 $ cd hello-angular
 
 # We will use a third-party helper library https://github.com/hotforfeature/origami
-$ yarn install --save @codebakery/origami
+$ yarn add @codebakery/origami
 
-$ yarn install --save @polymer/polymer@next
-$ yarn install --save @vaadin/vaadin-button
-$ yarn install --save @vaadin/vaadin-text-field
-$ yarn i --save @webcomponents/webcomponentsjs@latest
+$ yarn add @polymer/polymer
+$ yarn add @vaadin/vaadin-button
+$ yarn add @vaadin/vaadin-text-field
+$ yarn add @webcomponents/webcomponentsjs@latest
 ```
 
 Open `src/main.ts`
