@@ -4,7 +4,7 @@
 
 ### Install all dependencies
 
-Run `npm install` to install all the necessary dependencies. After this you can run the development server.
+Run `yarn install` to install all the necessary dependencies. After this you can run the development server.
 
 ### Development server
 
@@ -35,20 +35,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5 with additional steps to include Vaadin components. You can recreate the project by following along these steps:
 
-First [install npm](https://docs.npmjs.com/getting-started/installing-node)
+First [install yarn](https://yarnpkg.com/docs/install)
 
 ``` bash
-$ npm install -g @angular/cli
+$ yarn global add @angular/cli
 $ ng new hello-angular
 $ cd hello-angular
 
 # We will use a third-party helper library https://github.com/hotforfeature/origami
-$ npm install --save @codebakery/origami
+$ yarn add @codebakery/origami
 
-$ npm install --save @polymer/polymer@next
-$ npm install --save @vaadin/vaadin-button
-$ npm install --save @vaadin/vaadin-text-field
-$ npm i --save @webcomponents/webcomponentsjs@latest
+$ yarn add @polymer/polymer
+$ yarn add @vaadin/vaadin-button
+$ yarn add @vaadin/vaadin-text-field
+$ yarn add @webcomponents/webcomponentsjs
 ```
 
 Open `src/main.ts`
@@ -69,7 +69,7 @@ webcomponentsReady().then(() => {
 
 Open `src/polyfills.ts` and add webcomponents import in the end of the file:
 ``` typescript
-import '@webcomponents/webcomponentsjs/webcomponents-sd-ce.js';
+import '@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce.js';
 ```
 
 Open `src/app/app.module.ts`
