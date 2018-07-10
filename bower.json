@@ -1,0 +1,22 @@
+{
+  "name": "hello-angular",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Vaadin Ltd"
+  ],
+  "license": "Unlicensed",
+  "homepage": "https://vaadin.com/start/v10-angular",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.3.1",
+    "vaadin-dialog": "vaadin/vaadin-dialog#renderer",
+    "vaadin-button": "vaadin/vaadin-button#master"
+  }
+}

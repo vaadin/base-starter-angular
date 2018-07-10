@@ -1,3 +1,6 @@
-<vaadin-text-field #textField placeholder="Type Something"></vaadin-text-field>
-<vaadin-button (click)='title=textField.value'>Click Me!</vaadin-button>
+<vaadin-button (click)="dialogOpened=true">Click Me!</vaadin-button>
+<vaadin-dialog #dialog [(opened)]="dialogOpened"></vaadin-dialog>
+<ng-template #dialogContent>
+  <p (click)="check($el)">Hello, I am a dialog!</p>
+</ng-template>
 <h2>Hello {{title}}!</h2>
