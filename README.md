@@ -56,7 +56,7 @@ $ cat > .bowerrc
 ctrl+D
 
 $ bower install --save Polymer/polymer
-$ bower install --save vaadin-core
+$ bower install --save vaadin/vaadin-core
 ```
 
 If you'd like to not commit bower dependencies to your version control, add `src/assets/bower_components` to `.gitignore`.
