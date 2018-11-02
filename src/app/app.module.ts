@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { PolymerModule } from '@codebakery/origami';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -10,10 +9,9 @@ import { PolymerModule } from '@codebakery/origami';
     AppComponent
   ],
   imports: [
-    PolymerModule.forRoot(),
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
