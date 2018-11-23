@@ -11,7 +11,7 @@ First [install yarn](https://yarnpkg.com/docs/install).
 $ yarn install
 
 # serve with hot reload at localhost:4200
-$ yarn serve
+$ yarn start
 
 # build for production with minification
 $ yarn build
