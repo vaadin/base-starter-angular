@@ -2,6 +2,7 @@
   "name": "hello-angular",
   "version": "0.0.0",
   "scripts": {
+    "postinstall": "origami polyfill",
     "prepare:es5": "origami prepare es5 node_modules/{@polymer/*,@vaadin/*,@webcomponents/shadycss}",
     "ng": "ng",
     "start": "npm run prepare:es5 && ng serve --host 0.0.0.0 --disableHostCheck true",
