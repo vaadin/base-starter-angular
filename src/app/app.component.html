@@ -1,3 +1,6 @@
 <vaadin-text-field #textField placeholder="Type Something"></vaadin-text-field>
 <vaadin-button (click)='title=textField.value'>Click Me!</vaadin-button>
 <h2>Hello {{title}}!</h2>
+
+<vaadin-button (click)="dialog.opened = true">Open</vaadin-button>
+<vaadin-dialog #dialog [renderer]="renderer"></vaadin-dialog>
