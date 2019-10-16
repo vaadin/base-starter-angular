@@ -1,6 +1,7 @@
 <h2>Hello {{title}}!</h2>
 
-<vaadin-button (click)="dialog.opened = true">Open</vaadin-button>
+<vaadin-button class="blue" (click)="dialog.opened = true">Open</vaadin-button>
+<vaadin-button>Not blue</vaadin-button>
 
 <vaadin-dialog #dialog [renderer]="renderer">
   <ng-template cdkPortal #testTemplate="cdkPortal">
@@ -10,3 +11,10 @@
 </vaadin-dialog>
 
 
+<vaadin-grid [dataProvider]="dataProvider" item-id-path="key" size="5">
+  <vaadin-grid-tree-column path="level" item-has-children-path="hasChildren"></vaadin-grid-tree-column>
+  <vaadin-grid-column path="key"></vaadin-grid-column>
+  <vaadin-grid-column header="Name" [renderer]="nameRenderer"></vaadin-grid-column>
+</vaadin-grid>
+
+<vaadin-menu-bar (item-selected)="menuBarItemSelected($event)" [items]="menuItems" [_onMouseOver]="onMouseOver"></vaadin-menu-bar>
